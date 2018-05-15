@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9b1983f6d344454ab91bc899b7b8a9e4" Name="Diagram1">
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="8.75" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.Cinema" Width="1.5" PointX="4.375" PointY="5.5" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.Film" Width="1.5" PointX="4.125" PointY="2.5" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.Genre" Width="1.5" PointX="2" PointY="2.75" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.Reservation" Width="1.5" PointX="7.875" PointY="2.25" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.Role" Width="1.5" PointX="8.25" PointY="5" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.Seat" Width="1.5" PointX="6.125" PointY="5.25" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.Show" Width="1.5" PointX="6" PointY="2.375" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.ShowTimeFilm" Width="1.5" PointX="2.625" PointY="4.625" />
+        <EntityTypeShape EntityType="MoviesAndMagicDbModel.User" Width="1.5" PointX="10.25" PointY="2.75" />
+        <AssociationConnector Association="MoviesAndMagicDbModel.FK_Shows_Cinemas" />
+        <AssociationConnector Association="MoviesAndMagicDbModel.FK_Films_Genres1" />
+        <AssociationConnector Association="MoviesAndMagicDbModel.FK_Shows_Films" />
+        <AssociationConnector Association="MoviesAndMagicDbModel.FK_Reservations_Seats" />
+        <AssociationConnector Association="MoviesAndMagicDbModel.FK_Reservations_Shows" />
+        <AssociationConnector Association="MoviesAndMagicDbModel.FK_Users_Reservations" />
+        <AssociationConnector Association="MoviesAndMagicDbModel.FK_Users_Roles" />
+        <AssociationConnector Association="MoviesAndMagicDbModel.FK_Shows_ShowTimeFilms" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

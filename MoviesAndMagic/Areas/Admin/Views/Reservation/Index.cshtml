@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MoviesAndMagic.Areas.Admin.Models.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">@TempData["message"]</div>
+}
+
+<h2>Index for Reservation</h2>
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Admin", "Index", "AdminDashboard")</li>
+    <li class="active">Reservation List</li>
+</ol>
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
+</p>
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatNo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatNo)
+            </td>
+            <td>
+                @Html.ActionLink(" Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-primary glyphicon glyphicon-pencil" })
+                @Html.ActionLink(" Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+            </td>
+        </tr>
+    }
+
+</table>

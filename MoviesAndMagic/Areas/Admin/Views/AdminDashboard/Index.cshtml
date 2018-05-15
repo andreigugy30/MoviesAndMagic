@@ -1,0 +1,155 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+}
+
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Movies&Magic Admin Dashboard", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <!-- /.nav-collapse -->
+        </div>
+        <div class="col-sm-3">
+            <div class="sidebar">
+                <ul class="widget widget-menu unstyled">
+                    @*<li class="active">
+            <a href="index.html">
+                <i class="menu-icon icon-dashboard"></i>Dashboard
+            </a>
+        </li>*@
+                    <li>
+                        <a href="@Url.Action("Index", "Home")">
+                            <i class="glyphicon glyphicon-home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("About", "About")">
+                            <i class="glyphicon glyphicon-flag"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Reservation", new { area = "Admin"})">
+                            <i class="glyphicon glyphicon-calendar"></i> Reservation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "User", new { area = "Admin"})">
+                            <i class="glyphicon glyphicon-user"></i> Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Film", new { area = "Admin"})">
+                            <i class="glyphicon glyphicon-film"></i> Movies
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Genre", new { area = "Admin"})">
+                            <i class="glyphicon glyphicon-film"></i> Genres
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Cinema", new { area = "Admin"})">
+                            <i class="glyphicon glyphicon-hd-video"></i> Cinemas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Show", new { area = "Admin"})">
+                            <i class="glyphicon glyphicon-sound-dolby"></i> Shows
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Seat", new { area = "Admin"})">
+                            <i class="glyphicon glyphicon-lock"></i> Take a seat
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Role", new { area = ""})">
+                            <i class="glyphicon glyphicon-lock"></i> Role
+                        </a>
+                    </li>
+                </ul>
+                <!--/.widget-nav-->
+                <!--/.widget-nav-->
+                <ul class="widget widget-menu unstyled">
+                    <li>
+                        <a class="collapsed" data-toggle="collapse" href="#togglePages">
+                            <i class="menu-icon icon-cog">
+                            </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                            </i>More Pages
+                        </a>
+                        <ul id="togglePages" class="collapse unstyled">
+                            <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                            <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
+                            <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                </ul>
+            </div>
+            <!--/.sidebar-->
+        </div>
+        <div class="col-sm-9">
+
+        </div>
+    </div>
+    <!-- /navbar-inner -->
+</div>
+
+@*<div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Movies&Magic", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Reservation", "Index", new { area = "Admin", controller = "Reservation" })</li>
+                    <li>@Html.ActionLink("Users", "Index", new { area = "Admin", controller = "User" })</li>
+                    <li>@Html.ActionLink("Movies", "Index", new { area = "Admin", controller = "Film" })</li>
+
+                    <li class="dropdown">
+                        @Html.ActionLink("Genres", "Index", new { area = "Admin", controller = "Genre" }, htmlAttributes: new { @class = "dropdown-toggle", @data_toggle = "dropdown" })
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="col-sm-4">
+                                    <ul class="multi-column">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Horror</a></li>
+                                        <li><a href="#">Romance</a></li>
+                                        <li><a href="#">Thriller</a></li>
+                                        <li><a href="#">Comedy</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Cinemas", "Index", new { area = "Admin", controller = "Cinema" })</li>
+                    <li>@Html.ActionLink("Shows", "Index", new { area = "Admin", controller = "Show" })</li>
+                    @*<li>@Html.ActionLink("Register", "Register", "Account")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                </ul>
+            </div>
+        </div>
+    </div>*@
+<div>
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success">@TempData["message"]</div>
+    }
+</div>
+

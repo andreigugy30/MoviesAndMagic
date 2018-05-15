@@ -1,0 +1,24 @@
+﻿ul {
+    list-style-type: none;
+}
+
+    ul .dropdown-menu .multi-column ul li {
+        display: block;
+        margin-bottom: .5em;
+    }
+
+        ul .dropdown-menu .multi-column ul li a {
+            color: #212121;
+        }
+
+    ul .dropdown-menu .multi-column {
+        width: 200px;
+        left: 0;
+        padding: 0.5em;
+    }
+
+.multi-column a:hover {
+    color: #FF8D1B;
+    text-decoration: none;
+}
+

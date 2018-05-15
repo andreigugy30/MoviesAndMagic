@@ -1,0 +1,33 @@
+﻿@model MoviesAndMagic.ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "Register Role";
+}
+
+<h2>Register Role</h2>
+
+@using (Html.BeginForm("RegisterRole", "Account",
+    FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h4>Create a new account</h4>
+    <hr />
+
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.Label("Select Role", new { @class = "col-md-2 control-label"})
+
+        <div class="col-md-10">
+            @Html.DropDownList("UserName")
+        </div>
+    </div>
+
+    //Select the Role type for the User
+
+    <div class="form-group">
+        @Html.Label("Select User", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownList("UserName")
+        </div>
+    </div>
+}

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Movies&Magic</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <!-- header -->
+    @*<div class="header">
+        <div class="container">
+            <div class="w3layouts_logo">
+                <a href="index.html"><h1>Movies&Magic</h1></a>
+            </div>
+            @using (Html.BeginForm("Index", "Show", FormMethod.Get))
+            {
+                <div class="w3_search">
+
+                    <form action="#" method="post">
+                        @Html.TextBox("SearchString")
+                        <input type="submit" value="Go">
+                    </form>
+                </div>}
+            <div class="w3l_sign_in_register">
+                <ul>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> (+000) 123 345 653</li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Movies&Magic", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Reservation", "Index", new { area = "Admin", controller = "Reservation" })</li>
+                    <li>@Html.ActionLink("Users", "Index", new { area = "Admin", controller = "User" })</li>
+                    <li>@Html.ActionLink("Movies", "Index", new { area = "Admin", controller = "Film" })</li>
+
+                    <li class="dropdown">
+                        @Html.ActionLink("Genres", "Index", new { area = "Admin", controller = "Genre" }, htmlAttributes: new { @class = "dropdown-toggle", @data_toggle = "dropdown" })
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="col-sm-4">
+                                <ul class="multi-column">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Horror</a></li>
+                                    <li><a href="#">Romance</a></li>
+                                    <li><a href="#">Thriller</a></li>
+                                    <li><a href="#">Comedy</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Cinemas", "Index", new { area = "Admin", controller = "Cinema" })</li>
+                <li>@Html.ActionLink("Shows", "Index", new { area = "Admin", controller = "Show" })</li>
+                <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                <li>@Html.ActionLink("Login", "Login", "Account")</li>
+            </ul>
+        </div>
+    </div>
+</div>*@
+@*<div>
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success">@TempData["message"]</div>
+    }
+</div>*@
+<div class="body-content">
+    @RenderBody()
+    <hr />
+
+</div>
+
+<footer>
+    <strong>&copy; @DateTime.Now.Year - Movies&Magic 2018</strong>
+</footer>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+</html>

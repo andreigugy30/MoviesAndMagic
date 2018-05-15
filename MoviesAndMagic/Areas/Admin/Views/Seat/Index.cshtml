@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MoviesAndMagic.Areas.Admin.Models.Seat>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">@TempData["message"]</div>
+}
+
+<h2>Index for Seats</h2>
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Admin", "Index", "AdminDashboard")</li>
+    <li class="active">Seats List</li>
+</ol>
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
+</p>
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink(" Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-primary glyphicon glyphicon-pencil" })
+                @Html.ActionLink(" Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+            </td>
+        </tr>
+    }
+
+</table>
